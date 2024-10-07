@@ -19,9 +19,13 @@ const Board = () => {
     setValue(nextValue);
     setIsX(!isX);
   };
+  const resetState = () => {
+    setValue(Array(9).fill(null));
+    setIsX(true);
+  };
 
   return (
-    <>
+    <div className="flex flex-col mx-auto items-center h-">
       <div className="flex">
         <Square value={value[0]} onSquareClick={() => handleClick(0)} />
         <Square value={value[1]} onSquareClick={() => handleClick(1)} />
@@ -39,7 +43,10 @@ const Board = () => {
         <Square value={value[7]} onSquareClick={() => handleClick(7)} />
         <Square value={value[8]} onSquareClick={() => handleClick(8)} />
       </div>
-    </>
+      <div>
+        <button className="w-[100px] bg-pink-400 h-8 mt-8 rounded px-4 " onClick={resetState}> Reset </button>
+      </div>
+    </div>
   );
 };
 
