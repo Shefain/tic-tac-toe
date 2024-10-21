@@ -6,19 +6,20 @@ const Board = () => {
   const [isX, setIsX] = useState(true);
 
   const handleClick = (e) => {
-    if (value[e]) {
+    if (value[e]) { // if e number of array element has value then return and no further execution
       return;
     }
-    const nextValue = [...value];
+    const nextValue = [...value]; // copy of state array
     if (isX) {
-      nextValue[e] = "x";
+      nextValue[e] = "x"; //  update the e nubmer of array element in nextValue array
     } else {
-      nextValue[e] = "o";
+      nextValue[e] = "o"; //  update the e nubmer of array element in nextValue array
     }
 
-    setValue(nextValue);
-    setIsX(!isX);
+    setValue(nextValue); // update the state array with nextValue array
+    setIsX(!isX); // toggle the isX state variable
   };
+
   const resetState = () => {
     setValue(Array(9).fill(null));
     setIsX(true);
