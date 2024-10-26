@@ -10,7 +10,7 @@ const Board = () => {
   console.log(winner);
 
   const handleClick = (e) => {
-    if (value[e] !== null) {
+    if (value[e] !== null || winner) {
       return;
     }
 
